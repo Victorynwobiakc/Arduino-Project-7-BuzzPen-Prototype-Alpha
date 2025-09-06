@@ -1,0 +1,55 @@
+// C++ code
+//
+const int trigPin = 12;
+const int echoPin = 2;
+const int ledPin = 7;
+const int buzzer = 13;
+const int potpin = A4;
+
+
+void setup(){
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  pinMode(ledPin, OUTPUT);
+  pinMode(buzzer, OUTPUT);
+}
+
+
+void loop(){
+  long duration;
+  int distance;
+  
+  // clear the trigPin
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  
+  // trigger the sensor
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  
+  // Read the echopin
+  
+  duration = pulseIn(echoPin, HIGH);
+  
+// Calculate distanc (speed of sound is ~343m/s)
+  distance = (duration * 0.034) / 2;
+  
+   //potentiometer read
+  int potVal = analogRead(potpin);
+  
+  //LED control
+  if (distance < 70){
+    digitalWrite(ledPin, HIGH);
+     if (potVal > 200) {
+      digitalWrite(buzzer, HIGH);  // buzzer ON
+    } else {
+      digitalWrite(buzzer, LOW);   // buzzer OFF
+    }
+    delay(500);
+  }else{
+    digitalWrite(ledPin,LOW);
+    digitalWrite(buzzer, LOW);
+    delay(500);
+  }
+}
