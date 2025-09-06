@@ -34,3 +34,9 @@ In this first version (“Prototype Alpha”), I used an Arduino and a **buzzer*
 <img width="1422" height="515" alt="the buzz pen (2)" src="https://github.com/user-attachments/assets/8c50c084-b555-4ed7-8470-01d1060a4153" />
 
 
+
+https://github.com/user-attachments/assets/68f1c48a-d34b-46a1-af8a-bdd287dc1d26
+
+
+
+
